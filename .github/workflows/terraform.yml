@@ -1,0 +1,23 @@
+name: Verify Terraform
+on:
+  push:
+    branches: [main, 'david/**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.16.5
+      - run: terraform fmt -check -recursive
+        working-directory: terraform
+      - run: terraform init -backend=false -lockfile=readonly
+        working-directory: terraform
+      - run: terraform validate
+        working-directory: terraform
+      - run: terraform test
+        working-directory: terraform

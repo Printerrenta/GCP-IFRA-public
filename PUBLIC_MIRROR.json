@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "Printerrenta/GCP-IFRA",
+  "sourceCommit": "611cff93be958258cc0be6c1f11c9d93ec96d06f",
+  "sourceBranch": "main",
+  "history": "Independent public snapshots; no private Git history",
+  "files": [
+    {
+      "path": ".github/workflows/public-safety.yml",
+      "sha256": "b2496e36f4d1ef71234ffe5b349a9c449a8f45c575de594b23a41ddb3badebf7"
+    },
+    {
+      "path": ".github/workflows/terraform.yml",
+      "sha256": "b3b6652ebde4fce53698a06070ce536f2fd09db15384f77fe1c25ceabc385df1"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1e995d16a3bfd748b002e0b7cbbc607236e21d36e424c48601aff933129fdc42"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5892ffcce647f1ffd1342f1859d8ee91637f69deeee102e2a6a0da4131c189b7"
+    },
+    {
+      "path": "terraform/.terraform.lock.hcl",
+      "sha256": "921c40023b2b35ab4b135af112a8a4ce545ff0a9d93015852cd224b6bc2fc69d"
+    },
+    {
+      "path": "terraform/accounting.tf",
+      "sha256": "c0e8b7f6e464344ca401216eda4e221c43dffe887b96857b1bbb74037bf95c4f"
+    },
+    {
+      "path": "terraform/configuration.tf",
+      "sha256": "c2c277a34dcb205f6e4121b340cef6c828b196c995cbfd693ef5c49855e9652d"
+    },
+    {
+      "path": "terraform/delivery.tf",
+      "sha256": "e6166d5942a03b2cc144414cea59af64fbea9d4028782d76eda1fe7511d3bfc0"
+    },
+    {
+      "path": "terraform/main.tf",
+      "sha256": "8dce38c3cf3a91d19823f8948f7f57673afc9179315143855ab486b2712d25b3"
+    },
+    {
+      "path": "terraform/microservices.tf",
+      "sha256": "7b436c0c0247662e9b04a52ea68391b06a4591705e8aa764e1b6bb8f31647cff"
+    },
+    {
+      "path": "terraform/modules/artifact-registry/main.tf",
+      "sha256": "31f104485de221b8cbf2438b7dcd5d77d40e28021d3e4afa81128803a890118b"
+    },
+    {
+      "path": "terraform/modules/artifact-registry/outputs.tf",
+      "sha256": "ee84b83e4c26131f5a5b246045890f8b6a4977e47398f023caa3f0a081c9010d"
+    },
+    {
+      "path": "terraform/modules/artifact-registry/variables.tf",
+      "sha256": "0b34ff6c4e525cc8400cd9daec6518f21ee44c69acd18ba967f46fb0e4df96d8"
+    },
+    {
+      "path": "terraform/modules/cloud-run/main.tf",
+      "sha256": "da986deabb91890176d5f55e6eae16cac6636f993529e8d7d2b08a9dc2159b15"
+    },
+    {
+      "path": "terraform/modules/cloud-run/outputs.tf",
+      "sha256": "c73c9f36b7df9c60d1dc790468e4c3f59fdb278b4b3dbb6cedfe126cdeca80cc"
+    },
+    {
+      "path": "terraform/modules/cloud-run/variables.tf",
+      "sha256": "05849b1a5054bb7ca456336a1660f9459675deb4c36b63663beb8a30084d0ec4"
+    },
+    {
+      "path": "terraform/tests/microservices.tftest.hcl",
+      "sha256": "d5b8106e59f89b4a69a2a5bca1a57456f34980ff10c1731fae5679eff1c008f6"
+    },
+    {
+      "path": "terraform/variables.tf",
+      "sha256": "83aab1320505934951eed5a87929e86b98f1d16276431065e6ba6aebcd0bcc03"
+    }
+  ],
+  "byteIdenticalSourceFiles": [
+    ".gitignore",
+    "terraform/.terraform.lock.hcl",
+    "terraform/accounting.tf",
+    "terraform/configuration.tf",
+    "terraform/delivery.tf",
+    "terraform/main.tf",
+    "terraform/microservices.tf",
+    "terraform/modules/artifact-registry/main.tf",
+    "terraform/modules/artifact-registry/outputs.tf",
+    "terraform/modules/artifact-registry/variables.tf",
+    "terraform/modules/cloud-run/main.tf",
+    "terraform/modules/cloud-run/outputs.tf",
+    "terraform/modules/cloud-run/variables.tf",
+    "terraform/variables.tf"
+  ],
+  "executableFiles": [],
+  "omittedCategories": [
+    "production deployment settings",
+    "private release evidence",
+    "credentials",
+    "private Git history",
+    "publisher credentials and workflow"
+  ]
+}
