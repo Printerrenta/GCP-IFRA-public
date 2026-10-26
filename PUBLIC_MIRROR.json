@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceRepository": "Printerrenta/GCP-IFRA",
-  "sourceCommit": "611cff93be958258cc0be6c1f11c9d93ec96d06f",
+  "sourceCommit": "70eb89537182f98c86f2056d8a7b9eeffe7e90fc",
   "sourceBranch": "main",
   "history": "Independent public snapshots; no private Git history",
   "files": [
@@ -11,7 +11,7 @@
     },
     {
       "path": ".github/workflows/terraform.yml",
-      "sha256": "b3b6652ebde4fce53698a06070ce536f2fd09db15384f77fe1c25ceabc385df1"
+      "sha256": "1f37c804e42c20600a7cf1135ec4ab20922216558386bc125df6e52461fc37d0"
     },
     {
       "path": ".gitignore",

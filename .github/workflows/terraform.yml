@@ -1,5 +1,6 @@
 name: Verify Terraform
 on:
+  workflow_dispatch:
   push:
     branches: [main, 'david/**']
   pull_request:
