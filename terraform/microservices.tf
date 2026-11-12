@@ -63,6 +63,7 @@ locals {
     "identity-metering"  = ["identity", "metering"]
     "identity-billing"   = ["identity", "billing"]
     "rental-metering"    = ["rental", "metering"]
+    "metering-rental"    = ["metering", "rental"]
     "rental-billing"     = ["rental", "billing"]
     "metering-gateway"   = ["metering", "gateway"]
     "billing-gateway"    = ["billing", "gateway"]
@@ -123,6 +124,8 @@ module "microservices" {
       INTERNAL_AUTH_MODE     = "google"
       INTERNAL_AUDIENCE      = var.microservice_urls["rental"]
       INTERNAL_CALLER_EMAILS = google_service_account.micro["outbox-scheduler"].email
+      } : {}, each.key == "rental" && var.accounting_enabled ? {
+      METERING_SERVICE_URL = var.microservice_urls["metering"]
       } : {}, each.key == "notifications" ? {
       PUBSUB_SUBSCRIPTION    = "projects/${var.project_id}/subscriptions/rental-notifications-v1"
       INTERNAL_AUTH_MODE     = "google"

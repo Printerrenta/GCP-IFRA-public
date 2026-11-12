@@ -113,8 +113,12 @@ run "private_accounting_plan" {
     error_message = "Accounting needs its own topics, authenticated subscriptions and private durable heartbeats."
   }
   assert {
-    condition     = length(google_cloud_run_v2_service_iam_member.micro) == 20 && alltrue([for s in google_pubsub_subscription.accounting : s.dead_letter_policy[0].max_delivery_attempts == 10])
+    condition     = length(google_cloud_run_v2_service_iam_member.micro) == 21 && alltrue([for s in google_pubsub_subscription.accounting : s.dead_letter_policy[0].max_delivery_attempts == 10])
     error_message = "All service invocation edges and dead-letter policies must remain scoped."
+  }
+  assert {
+    condition     = local.invocation_edges["metering-rental"] == ["metering", "rental"]
+    error_message = "Rental completion must use the private metering service with a service-scoped invocation grant."
   }
   assert {
     condition     = length(var.runtime_secrets) == 0 && length(local.micro_secrets["metering"]) == 2 && length(local.micro_secrets["billing"]) == 2

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceRepository": "Printerrenta/GCP-IFRA",
-  "sourceCommit": "70eb89537182f98c86f2056d8a7b9eeffe7e90fc",
+  "sourceCommit": "5709d29181761820410f778027bff082ff6c1d39",
   "sourceBranch": "main",
   "history": "Independent public snapshots; no private Git history",
   "files": [
@@ -43,7 +43,7 @@
     },
     {
       "path": "terraform/microservices.tf",
-      "sha256": "7b436c0c0247662e9b04a52ea68391b06a4591705e8aa764e1b6bb8f31647cff"
+      "sha256": "21a1304e71ce484b9b62b3e7d09601d1947bb366868f7dcb83f57ea193a0ae66"
     },
     {
       "path": "terraform/modules/artifact-registry/main.tf",
@@ -71,7 +71,7 @@
     },
     {
       "path": "terraform/tests/microservices.tftest.hcl",
-      "sha256": "d5b8106e59f89b4a69a2a5bca1a57456f34980ff10c1731fae5679eff1c008f6"
+      "sha256": "7acbe58f3b7b21362676967cffe1edbc2999dce42816068d7e518877c9b58601"
     },
     {
       "path": "terraform/variables.tf",
