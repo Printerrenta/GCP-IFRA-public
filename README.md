@@ -36,3 +36,14 @@ PUBLIC_MIRROR.json records snapshot checksums. The public history is independent
 new snapshots follow successful main CI. Production configuration and private Git
 history are never exported by the allowlist. Contributions belong in the source;
 this generated mirror may replace direct edits on synchronization.
+
+## Infrastructure and delivery boundaries
+
+- Terraform owns service settings, runtime identities and narrowly scoped
+  service-to-service invoker grants.
+- Service delivery pipelines own deployed image digests and traffic promotion;
+  the Cloud Run module excludes those fields from Terraform drift updates.
+- Secret Manager configuration contains references, not secret payloads.
+- Use the included mock tests to inspect infrastructure behavior without
+  operational cloud credentials. Environment examples must be adapted to your
+  own project; they do not provide access to the hosted deployment.
