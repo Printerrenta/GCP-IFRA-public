@@ -5,4 +5,12 @@ resource "google_artifact_registry_repository" "this" {
   description   = "Container images for ${var.repository_id}"
   format        = "DOCKER"
   labels        = var.labels
+
+  cleanup_policies {
+    id     = "keep-recent-images"
+    action = "KEEP"
+    most_recent_versions {
+      keep_count = 10
+    }
+  }
 }

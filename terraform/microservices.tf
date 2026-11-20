@@ -104,8 +104,8 @@ module "microservices" {
   service_name            = "psi-${each.key}"
   container_image         = var.microservice_images[each.key]
   container_port          = 8080
-  min_instance_count      = 0
-  max_instance_count      = 1
+  min_instance_count      = var.service_min_instance_count
+  max_instance_count      = var.service_max_instance_count
   allow_unauthenticated   = false
   runtime_service_account = google_service_account.micro[each.key].email
   container_memory        = "512Mi"

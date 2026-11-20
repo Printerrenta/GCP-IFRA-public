@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceRepository": "Printerrenta/GCP-IFRA",
-  "sourceCommit": "3af2367d4427de2d11cd6ac4178df563cfccd9d5",
+  "sourceCommit": "04eab3b53c1e63ab6816c9bad711f48723153630",
   "sourceBranch": "main",
   "history": "Independent public snapshots; no private Git history",
   "files": [
@@ -43,15 +43,15 @@
     },
     {
       "path": "terraform/microservices.tf",
-      "sha256": "21a1304e71ce484b9b62b3e7d09601d1947bb366868f7dcb83f57ea193a0ae66"
+      "sha256": "4a181520e02717a014b67c9714847bc2a29c7175d61a41ebd4bcc34cc1fb8a47"
     },
     {
       "path": "terraform/modules/artifact-registry/main.tf",
-      "sha256": "31f104485de221b8cbf2438b7dcd5d77d40e28021d3e4afa81128803a890118b"
+      "sha256": "99783e7156a0ed5e87f81c9942b45b8645c8a11cdc1bfe67002900ebf31fbea1"
     },
     {
       "path": "terraform/modules/artifact-registry/outputs.tf",
-      "sha256": "ee84b83e4c26131f5a5b246045890f8b6a4977e47398f023caa3f0a081c9010d"
+      "sha256": "478d8255be6bfbb0ecde8ca463b2a79ce726da8664e7f3a45b681d6c9b79dc93"
     },
     {
       "path": "terraform/modules/artifact-registry/variables.tf",
@@ -59,23 +59,23 @@
     },
     {
       "path": "terraform/modules/cloud-run/main.tf",
-      "sha256": "da986deabb91890176d5f55e6eae16cac6636f993529e8d7d2b08a9dc2159b15"
+      "sha256": "cbe7859ed24d0caf8aff6dd503b4dbb6cba409db5d3f7dccf09f270d93de4d5d"
     },
     {
       "path": "terraform/modules/cloud-run/outputs.tf",
-      "sha256": "c73c9f36b7df9c60d1dc790468e4c3f59fdb278b4b3dbb6cedfe126cdeca80cc"
+      "sha256": "fe9f12cf46681b41e98ea5e42942563eb30d3c8128913e8c20cc6d0d9d929e72"
     },
     {
       "path": "terraform/modules/cloud-run/variables.tf",
-      "sha256": "05849b1a5054bb7ca456336a1660f9459675deb4c36b63663beb8a30084d0ec4"
+      "sha256": "063d0ea7b7053ab4ee3c34fda2cbc92c66a67363d240c07245a7f5818a0d8652"
     },
     {
       "path": "terraform/tests/microservices.tftest.hcl",
-      "sha256": "7acbe58f3b7b21362676967cffe1edbc2999dce42816068d7e518877c9b58601"
+      "sha256": "59edca9b513ac72977a2ef6b8983d2ada66569ec4ddbaa11678f078d5979a2d0"
     },
     {
       "path": "terraform/variables.tf",
-      "sha256": "83aab1320505934951eed5a87929e86b98f1d16276431065e6ba6aebcd0bcc03"
+      "sha256": "1efb467ad88aa6e1ebbd1877900422c83911a3b8499bb1ee83c4997314e6670e"
     }
   ],
   "byteIdenticalSourceFiles": [

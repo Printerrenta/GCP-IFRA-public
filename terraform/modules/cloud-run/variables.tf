@@ -64,3 +64,14 @@ variable "startup_cpu_boost" {
   type        = bool
   default     = false
 }
+
+variable "ingress" {
+  description = "Cloud Run ingress setting."
+  type        = string
+  default     = "INGRESS_TRAFFIC_ALL"
+
+  validation {
+    condition     = contains(["INGRESS_TRAFFIC_ALL", "INGRESS_TRAFFIC_INTERNAL_ONLY", "INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER"], var.ingress)
+    error_message = "Ingress must be INGRESS_TRAFFIC_ALL, INGRESS_TRAFFIC_INTERNAL_ONLY, or INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER."
+  }
+}

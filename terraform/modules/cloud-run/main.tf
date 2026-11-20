@@ -3,6 +3,7 @@ resource "google_cloud_run_v2_service" "this" {
   name                 = var.service_name
   location             = var.region
   labels               = var.labels
+  ingress              = var.ingress
   invoker_iam_disabled = false
 
   # Per-service CI owns images and explicit traffic promotion. Terraform owns service settings.
@@ -54,6 +55,17 @@ resource "google_cloud_run_v2_service" "this" {
 
       ports {
         container_port = var.container_port
+      }
+
+      startup_probe {
+        initial_delay_seconds = 0
+        timeout_seconds       = 3
+        period_seconds        = 10
+        failure_threshold     = 12
+        http_get {
+          path = "/health"
+          port = var.container_port
+        }
       }
     }
   }

@@ -128,6 +128,10 @@ run "private_accounting_plan" {
     condition     = length(google_cloud_run_v2_service_iam_member.accounting_deployer) == 2 && toset([for b in google_cloud_run_v2_service_iam_member.accounting_deployer : b.name]) == toset(["psi-metering", "psi-billing"]) && alltrue([for b in google_cloud_run_v2_service_iam_member.accounting_deployer : b.role == "roles/run.developer" && b.member == "serviceAccount:psi-be-build@printer-rental-example.iam.gserviceaccount.com"])
     error_message = "Only the two new runtimes may grant the existing builder service-scoped deployment access."
   }
+  assert {
+    condition     = module.cloud_run.ingress == "INGRESS_TRAFFIC_ALL" && alltrue([for svc in module.microservices : svc.ingress == "INGRESS_TRAFFIC_ALL"]) && contains(module.artifact_registry.cleanup_policy_ids, "keep-recent-images")
+    error_message = "Cloud Run ingress must be explicitly managed and Artifact Registry must retain recent images."
+  }
 }
 
 run "separate_database_secret_pins" {
@@ -199,4 +203,15 @@ run "reject_gateway_database_secret" {
     service_database_secret_versions = { gateway = { pooled = "2", direct = "2" } }
   }
   expect_failures = [var.service_database_secret_versions]
+}
+run "reject_invalid_microservice_scaling" {
+  command = plan
+  variables {
+    project_id                 = "printer-rental-example"
+    environment                = "dev"
+    container_image            = "example.invalid/image:test"
+    service_min_instance_count = 2
+    service_max_instance_count = 1
+  }
+  expect_failures = [var.service_max_instance_count]
 }

@@ -48,6 +48,28 @@ variable "max_instance_count" {
   default     = 3
 }
 
+variable "service_min_instance_count" {
+  description = "Minimum number of Cloud Run instances kept warm for each domain microservice."
+  type        = number
+  default     = 0
+
+  validation {
+    condition     = var.service_min_instance_count >= 0
+    error_message = "service_min_instance_count must be greater than or equal to 0."
+  }
+}
+
+variable "service_max_instance_count" {
+  description = "Maximum number of Cloud Run instances for each domain microservice."
+  type        = number
+  default     = 1
+
+  validation {
+    condition     = var.service_max_instance_count >= 1 && var.service_max_instance_count >= var.service_min_instance_count
+    error_message = "service_max_instance_count must be at least 1 and greater than or equal to service_min_instance_count."
+  }
+}
+
 variable "allow_unauthenticated" {
   description = "Whether to grant public invoker access to the Cloud Run service."
   type        = bool
